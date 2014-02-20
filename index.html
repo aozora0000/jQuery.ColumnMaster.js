@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>JqueryColumnMaster</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="jquery.columnmaster.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h2 class="title">JqueryColumnMaster</h2>
+			<table class="table" role="table" id="column">
+				<thead>
+					<tr>
+						<th></th>
+						<th>ID</th>
+						<th>TITLE</th>
+						<th>VALUE</th>
+						<th>CHECK</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td>
+							<input type="text" data-name="id" value=""  class="form-control">
+						</td>
+						<td>
+							<input type="text" data-name="title" value=""  class="form-control">
+						</td>
+						<td>
+							<select data-name="value" id="" class="form-control">
+								<option value="10000">10000</option>
+								<option value="20000">20000</option>
+							</select>
+						</td>
+						<td>
+							<input type="checkbox" data-name="check" class="form-control" value="1">
+						</td>
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script>
+		$("#column").columnMaster({
+			btnCol		: 1, 										//Delete button col number
+			RowSelector	: "tbody > tr",								//Row selector
+			dataName	: "table_data", 							//Name attribute variable names table_data[0][data-name]
+			fadeInterval: 200,										//FadeIn FadeOut Animation Interval(ms)
+			RowLimit	: 3,										//Max Row Size Limit
+			LimitAlert	: "これ以上追加出来ません。\n最大%d件までです"//Max Row Size Overflow Message (%d･･･LimitSize)
+		});
+	</script>
+</body>
+</html>
